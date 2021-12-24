@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coordinates</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      background-color: royalblue;
+      margin-top: 5px;
+    }
+    .spcial{
+      background-color: tomato;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div class="spcial"></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+
+  <script>
+    const spcialDiv = document.querySelector('.spcial');
+
+    spcialDiv.addEventListener('click', (event) => {
+      const rect = spcialDiv.getBoundingClientRect();
+      console.log(rect);
+      console.log(`client: ${event.clientX}, ${event.clientY}`);
+      console.log(`page: ${event.pageX}, ${event.pageY}`);
+    })
+  </script>
+</body>
+</html>

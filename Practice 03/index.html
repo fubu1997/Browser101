@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coordinates</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      background-color: royalblue;
+      margin-top: 5px;
+    }
+    .spcial{
+      background-color: tomato;
+    }
+    section{
+      position: fixed;
+      top: 10px;
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <button id="firstBtn">Scroll by 100px</button>
+    <button id="secondBtn">Scroll by 100px from document</button>
+    <button id="thirdBtn">Scroll into Special</button>
+  </section>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div class="spcial"></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+
+  <script>
+    const spcialDiv = document.querySelector('.spcial');
+
+    spcialDiv.addEventListener('click', (event) => {
+      const rect = spcialDiv.getBoundingClientRect();
+      console.log(rect);
+      console.log(`client: ${event.clientX}, ${event.clientY}`);
+      console.log(`page: ${event.pageX}, ${event.pageY}`);
+    })
+
+    const firstBtn = document.querySelector('#firstBtn');
+    const secondBtn = document.querySelector('#secondBtn');
+    const thirdBtn = document.querySelector('#thirdBtn');
+
+    firstBtn.addEventListener('click', () => {
+      window.scrollBy({top: 100, left: 0, behavior: "smooth"});
+    });
+
+    secondBtn.addEventListener('click', () => {
+      window.scrollTo(0, 100);
+    });
+
+    thirdBtn.addEventListener('click', () => {
+      spcialDiv.scrollIntoView({behavior: "smooth", block: "center"})
+    })
+
+  </script>
+</body>
+</html>

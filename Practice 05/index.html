@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      img {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-bottom: 20px;
+      }
+      button {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 30px;
+        width: 200px;
+        height: 50px;
+        font-size: 30px;
+        text-align: center;
+        background-color: pink;
+        outline: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">Find a rabbit</button>
+    <img src="/Practice 05/img/carrot.png" alt="">
+    <img src="/Practice 05/img/carrot.png" alt="">
+    <img src="/Practice 05/img/carrot.png" alt="">
+    <img src="/Practice 05/img/carrot.png" alt="">
+    <img src="/Practice 05/img/carrot.png" alt="">
+    <img src="/Practice 05/img/carrot.png" alt="">
+    <img src="/Practice 05/img/carrot.png" alt="">
+    <img src="/Practice 05/img/carrot.png" alt="">
+    <img id="rabbit" src="/Practice 05/img/rabbit.png" alt="">
+    <img src="/Practice 05/img/carrot.png" alt="">
+    <img src="/Practice 05/img/carrot.png" alt="">
+    <img src="/Practice 05/img/carrot.png" alt="">
+    <img src="/Practice 05/img/carrot.png" alt="">
+
+
+    <script>
+      const btn = document.querySelector('#btn');
+      const rabbit = document.querySelector('#rabbit');
+
+      btn.addEventListener('click', () => {
+        rabbit.scrollIntoView({behavior: "smooth", block: "center"})
+      })
+    </script>
+  </body>
+</html>
