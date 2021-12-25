@@ -1,0 +1,67 @@
+* {
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  width: 100vh;
+  height: 100vh;
+  margin: auto;
+  background: url("/Practice09-Game/img/background.png") no-repeat;
+  background-size: cover;
+}
+
+#content {
+  width: 100%;
+  height: 50%;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#play,
+#stop {
+  padding: 15px;
+  font-size: 50px;
+  cursor: pointer;
+  border: 5px solid black;
+  border-radius: 12px;
+  background-color: burlywood;
+}
+
+#clock {
+  width: 200px;
+  height: 100px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid black;
+  border-radius: 12px;
+  font-size: 60px;
+  background-color: white;
+}
+
+#count {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  border: 3px solid black;
+  border-radius: 50%;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  background-color: orange;
+}
+
+#ground {
+  width: 100%;
+  height: 50%;
+  margin: auto;
+}
