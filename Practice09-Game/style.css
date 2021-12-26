@@ -4,7 +4,7 @@
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 body {
@@ -64,4 +64,43 @@ body {
   width: 100%;
   height: 50%;
   margin: auto;
+}
+
+.bugImg {
+  cursor: pointer;
+  transition: all 100ms ease-in;
+}
+
+.carrotImg {
+  cursor: pointer;
+  transition: all 100ms ease-in;
+}
+
+.bugImg:hover,
+.carrotImg:hover {
+  transform: scale(1.1);
+}
+
+#loseContent {
+  width: 50%;
+  height: 60%;
+  margin: auto;
+  border: none solid black;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 50%);
+  color: white;
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#loseContent button {
+  font-size: 50px;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 10px;
+  background-color: blanchedalmond;
+  cursor: pointer;
 }

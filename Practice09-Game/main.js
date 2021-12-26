@@ -8,16 +8,35 @@ let clockMin = min.textContent;
 let clockSec = sec.textContent;
 //----------------------ground--------------------//
 const ground = document.querySelector('#ground');
+bugImg = document.createElement('img');
+bugImg.src = "/Practice09-Game/img/bug.png";
+carrotImg = document.createElement('img');
+carrotImg.src = "/Practice09-Game/img/carrot.png";
 
 playBtn.addEventListener('click', () => {
   playBtn.classList.add('hidden');
   stopBtn.classList.remove('hidden');
 
   startClock = setInterval(clockCount, 1000);
+  innerImg();
 })
 
-
 stopBtn.addEventListener('click', () => {
+  stopLogic();
+})
+
+bugImg.addEventListener('click', () => {
+  const loseContent = document.querySelector('#loseContent');
+  const loseContentBtn = document.querySelector('#loseContent button');
+  loseContent.classList.remove('hidden');
+  stopLogic();
+  loseContentBtn.addEventListener('click', () => {
+    loseContent.classList.add('hidden');
+  });
+})
+
+//-------------function-----------------
+function stopLogic() {
   playBtn.classList.remove('hidden');
   stopBtn.classList.add('hidden');
 
@@ -25,8 +44,9 @@ stopBtn.addEventListener('click', () => {
   clockMin = 02;
   clockSec = 00;
   clock.innerHTML = `0${clockMin}:0${clockSec}`;
-})
-
+  ground.removeChild(bugImg);
+  ground.removeChild(carrotImg);
+}
 
 function clockCount() {
   clockSec--;
@@ -39,20 +59,10 @@ function clockCount() {
   }
 }
 
-
-
-
-bugImg = document.createElement('img');
-bugImg.src = "/Practice09-Game/img/bug.png";
-
-carrotImg = document.createElement('img');
-carrotImg.src = "/Practice09-Game/img/carrot.png";
-
 function innerImg() {
   ground.appendChild(bugImg);
   ground.appendChild(carrotImg);
-  bugImg.style.transform = 'translate(120px, 400px)';
-  carrotImg.style.transform = 'translate(120px, 200px)';
+  bugImg.setAttribute("class", "bugImg");
+  carrotImg.setAttribute("class", "carrotImg");
 }
 
-innerImg();
